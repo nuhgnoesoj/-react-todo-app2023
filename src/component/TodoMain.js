@@ -3,14 +3,18 @@ import TodoItem from "./TodoItem";
 
 import './scss/TodoMain.scss'
 
-const TodoMain = () => {
+const TodoMain = ({ todoList }) => {
+
+    // console.log(bbb.todoList);
+
+
     return (
         <ul className={'todo-list'}>
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
+            {
+                todoList.map(todo => <TodoItem item={todo} />)
+            }
         </ul>
-    );
+    )
 };
 
 export default TodoMain;
